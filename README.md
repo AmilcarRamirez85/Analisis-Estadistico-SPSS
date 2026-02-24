@@ -1,5 +1,4 @@
-# Proyecto: 
-Diferencias Biométricas entre Especies
+# Proyecto: Diferencias Biométricas entre Especies
 ### Origen de los Datos
 Los datos utilizados en este proyecto provienen del dataset Palmer Penguins, recolectados por la Dra. Kristen Gorman y la Palmer Station, Antarctica LTER. Estos datos están disponibles bajo licencia CC0 (Dominio Público).
 ## Descripción: 
