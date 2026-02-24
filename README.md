@@ -1,5 +1,7 @@
 # Proyecto: 
 Diferencias Biométricas entre Especies
+### Origen de los Datos
+Los datos utilizados en este proyecto provienen del dataset Palmer Penguins, recolectados por la Dra. Kristen Gorman y la Palmer Station, Antarctica LTER. Estos datos están disponibles bajo licencia CC0 (Dominio Público).
 ## Descripción: 
 Análisis estadístico para determinar si existen diferencias significativas en la masa corporal de los pingüinos según su especie.
 
