@@ -1,25 +1,61 @@
-# Proyecto: Diferencias Biométricas entre Especies
-### Origen de los Datos
-Los datos utilizados en este proyecto provienen del dataset Palmer Penguins, recolectados por la Dra. Kristen Gorman y la Palmer Station, Antarctica LTER. Estos datos están disponibles bajo licencia CC0 (Dominio Público).
-## Descripción: 
-Análisis estadístico para determinar si existen diferencias significativas en la masa corporal de los pingüinos según su especie.
+# 📑 Comparación de la masa corporal entre especies de pingüinos
+**Autor:** [Tu Nombre]  
+**Fecha:** 24 de febrero de 2026
 
-## 1. Fase de Exploración (Descriptiva)Limpieza: 
-Se verificaron valores perdidos y se eliminaron 2 filas incompletas.
+---
 
-## Estadísticos: 
-La masa promedio general es de 4201g con una desviación estándar de 801g.
+## 1. Introducción y Objetivo
+Breve contexto sobre la base de datos de Pingüinos de Palmer y la importancia de estudiar su masa corporal para entender la salud del ecosistema antártico.
 
-## Visualización: 
-Se generó un histograma para observar la distribución inicial.
-## 2. Verificación de Supuestos (El Corazón del Análisis)
-Para decidir la prueba inferencial, apliqué los siguientes filtros:
-Normalidad: Se utilizó la prueba de Shapiro-Wilk ($n < 50$ por grupo). El resultado fue $p = 0.021$, por lo cual se rechaza la hipótesis de normalidad.
-Homocedasticidad: La prueba de Levene mostró un $p = 0.45$, indicando varianzas homogéneas.
-Decisión: Debido a la falta de normalidad, se optó por una prueba No Paramétrica.
+> **Objetivo:** Determinar si existen diferencias significativas en la **masa corporal (g)** según la **especie** del pingüino.
 
-## 3. Fase Inferencial (Resultados)
-Prueba utilizada: Kruskal-Wallis (para comparar 3 grupos independientes).Resultado (Sig.): $p < 0.001$.
-Interpretación: Existen diferencias estadísticamente significativas en la masa corporal entre al menos dos especies de pingüinos.
-## 4. Conclusión
-Se evidencia que la especie Gentoo tiene una masa corporal significativamente mayor que las especies Adelie y Chinstrap.
+### Hipótesis del Análisis
+* **$H_0$:** No existen diferencias significativas entre los grupos ($\mu_1 = \mu_2 = \mu_3$).
+* **$H_1$:** Existen diferencias significativas en al menos uno de los grupos.
+
+---
+
+## 2. Metodología y Preparación de Datos
+Para garantizar la calidad de la inferencia, se realizaron los siguientes pasos previos:
+
+* **Limpieza de Datos:** Se realizó una auditoría de la base de datos, identificando y gestionando **[X] valores perdidos**.
+* **Visualización Inicial:** Se emplearon **histogramas y boxplots** para identificar la distribución y la presencia de *outliers*.
+
+### Resumen Descriptivo General
+| Variable | Media | Desv. Estándar | N |
+| :--- | :--- | :--- | :--- |
+| Masa Corporal (g) | [Valor] | [Valor] | [Valor] |
+
+---
+
+## 3. Validación de Supuestos
+Esta etapa justifica la elección de la prueba estadística final.
+
+### A. Prueba de Normalidad (Shapiro-Wilk)
+Se segmentó la base de datos por especie para evaluar la distribución interna de cada grupo.
+* **Grupos [A y B]:** $p > 0.05$ (Se asume normalidad).
+* **Grupo [C]:** $p < 0.05$ (No presenta normalidad).
+
+### B. Homocedasticidad (Prueba de Levene)
+* **Resultado:** $p = [Valor]$.
+* **Interpretación:** [Existe/No existe] igualdad de varianzas entre los grupos.
+
+> **Selección de Prueba:** Dado el [incumplimiento de normalidad / varianza], se procedió a realizar una prueba **[Paramétrica/No Paramétrica]**.
+
+---
+
+## 4. Resultados e Interpretación
+A continuación se detallan los hallazgos tras ejecutar el contraste de hipótesis en SPSS.
+
+* **Estadístico de Contraste:** $[t, F \text{ o } H] = [Valor]$
+* **p-valor (Sig.):** $[Valor]$
+* **Decisión:** Al ser el $p < 0.05$, se **rechaza** la Hipótesis Nula ($H_0$).
+
+### Análisis Post-Hoc (Comparaciones Múltiples)
+Las comparaciones múltiples (Tukey/Bonferroni) indican que la diferencia principal radica entre el grupo **[Nombre]** y el grupo **[Nombre]**.
+
+---
+
+## 5. Conclusiones y Recomendaciones
+1. **Conclusión:** Se confirma que la especie influye de manera significativa en el peso de los individuos.
+2. **Recomendación:** Se sugiere enfocar esfuerzos de monitoreo en [Especie], dado su comportamiento observado.
