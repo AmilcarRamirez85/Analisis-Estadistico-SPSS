@@ -1,24 +1,24 @@
-# 📑 Comparación de la masa corporal entre especies de pingüinos
-**Autor:** [Tu Nombre]  
+# 📑 ¿Existen diferencias estadísticamente significativas en la masa corporal promedio entre las especies de pingüinos?
+**Autor:** Amilcar Ramírez Alvarado
 **Fecha:** 24 de febrero de 2026
 
 ---
 
 ## 1. Introducción y Objetivo
-Breve contexto sobre la base de datos de Pingüinos de Palmer y la importancia de estudiar su masa corporal para entender la salud del ecosistema antártico.
+Para responder a la pregunta de investigación se utilizará el dataset Palmer Penguins, el cual es de acceso abierto bajo licencia Creative Commons. Este conjunto de datos contiene información recolectada en el archipiélago Palmer, conformado por tres islas, e incluye registros morfológicos de 344 pingüinos pertenecientes a tres especies.
 
-> **Objetivo:** Determinar si existen diferencias significativas en la **masa corporal (g)** según la **especie** del pingüino.
+> **Objetivo:** Determinar si existen diferencias estadisticamente significativas en la **masa corporal (g)** según la **especie** de pingüinos.
 
 ### Hipótesis del Análisis
-* **$H_0$:** No existen diferencias significativas entre los grupos ($\mu_1 = \mu_2 = \mu_3$).
-* **$H_1$:** Existen diferencias significativas en al menos uno de los grupos.
+* **$H_0$:** Las medias poblacionales de masa corporal son iguales entre las especies de pingüinos.
+* **$H_1$:** Al menos una de las medias poblacionales de masa corporal difiere entre las especies.
 
 ---
 
 ## 2. Metodología y Preparación de Datos
 Para garantizar la calidad de la inferencia, se realizaron los siguientes pasos previos:
 
-* **Limpieza de Datos:** Se realizó una auditoría de la base de datos, identificando y gestionando **[X] valores perdidos**.
+* **Limpieza de Datos:** Se realizó una revisión de la base de datos, identificando y gestionando **[11] valores perdidos**.
 * **Visualización Inicial:** Se emplearon **histogramas y boxplots** para identificar la distribución y la presencia de *outliers*.
 
 ### Resumen Descriptivo General
