@@ -1,17 +1,61 @@
-# 📑 ¿Existen diferencias estadísticamente significativas en la masa corporal promedio entre las especies de pingüinos?
+# Analísis dataset "Palmer Penguins"
 **Autor:** Amilcar Ramírez Alvarado
 **Fecha:** 24 de febrero de 2026
 
 ---
 
-## 1. Introducción y Objetivo
-Para responder a la pregunta de investigación se utilizará el dataset Palmer Penguins, el cual es de acceso abierto bajo licencia Creative Commons. Este conjunto de datos contiene información recolectada en el archipiélago Palmer, conformado por tres islas, e incluye registros morfológicos de 344 pingüinos pertenecientes a tres especies.
+## Introducción 
+El presente análisis busca determinar si existen diferencias morfométricas significativas entre las tres especies de pingüinos (Adeliae, Gentoo y Chinstrap) que habitan el Archipiélago de Palmer. Para ello, se evaluarán cuatro rasgos físicos clave: **masa corporal, longitud de las aletas, y las dimensiones del culmen (largo y ancho)**. A través de una serie de análisis de varianza (ANOVA), buscaremos responder si estas especies han desarrollado adaptaciones físicas distintas. 
+### Preguntas de investigación
+1. ¿Es diferente la masa corporal entre las especies?
+2. ¿Existe diferencia en el largo de las aletas de las especies?
+3. ¿El largo del pico presenta diferencias entre las especies?
+4. ¿El ancho del pico tiene alguna diferencia entre las especies?
 
-> **Objetivo:** Determinar si existen diferencias estadisticamente significativas en la **masa corporal (g)** según la **especie** de pingüinos.
+## Validacion de supuestos
+Antes de proceder con la comparación de medias, se evaluó el supuesto de normalidad para cada variable segmentada por especie mediante la prueba de Shapiro-Wilk. Este paso es fundamental para decidir entre el uso de pruebas paramétricas (ANOVA) o no paramétricas (Kruskal-Wallis).
 
-### Hipótesis del Análisis
-* **$H_0$:** Las medias poblacionales de masa corporal son iguales entre las especies de pingüinos.
-* **$H_1$:** Al menos una de las medias poblacionales de masa corporal difiere entre las especies.
+### Prueba de normalidad body_mass_g por Especie
+| Especie | Estadistico | gl | Sig. |
+| :--- | :--- | :--- | :--- |
+| Adelie | 0.981 | 151 | 0.032 |
+| Gentoo | 0.986 | 123 | 0.234 |
+| Chinstrap | 0.984 | 68 | 0.561 |
+
+Se observó que la variable body_mass_g presenta una desviación significativa de la normalidad solo en la especie Adelie ($W = 0.981, p = 0.032$).
+
+### Prueba de normalidad flipper_length_mm por Especie
+| Especie | Estadistico | gl | Sig. |
+| :--- | :--- | :--- | :--- |
+| Adelie | 0.993 | 151 | 0.720 |
+| Gentoo | 0.962 | 123 | 0.002 |
+| Chinstrap | 0.989 | 68 | 0.811 |
+
+### Prueba de normalidad bill_depth_mm por Especie
+| Especie | Estadistico | gl | Sig. |
+| :--- | :--- | :--- | :--- |
+| Adelie | 0.985 | 151 | 0.092 |
+| Gentoo | 0.976 | 123 | 0.028 |
+| Chinstrap | 0.973 | 68 | 0.142 |
+
+### Prueba de normalidad bill_lenth_mm por Especie
+| Especie | Estadistico | gl | Sig. |
+| :--- | :--- | :--- | :--- |
+| Adelie | 0.993 | 151 | 0.717 |
+| Gentoo | 0.973 | 123 | 0.013 |
+| Chinstrap | 0.975 | 68 | 0.194|
+
+En las variables flipper_length_mm, bill_depth_mm y bill_length_mm, la especie Gentoo mostró valores de p inferiores a 0.05, lo que sugiere una distribución no normal en este grupo específico.
+
+## ¿Es diferente la masa corporal entre las especies?
+Para poder responer a esta pregunta se plantean las siguientes hipotesis
+* **$H_0$:** No existe diferencia significativa en la masa corporal promedio entre las especies de pinguinos ($\mu_1 = \mu_2 = \mu_3$).
+
+* **$H_1$:** Al menos una de especies presenta una masa corporal significativamente distinta a las demas.
+
+### Anova (masa corporal)
+Tras la ejecución del analisis de varianzas para la variable **body_mass_g** por especie, se obtuvieron los siguientes estadisticos:
+
 
 ---
 
@@ -24,38 +68,8 @@ Para garantizar la calidad de la inferencia, se realizaron los siguientes pasos 
 ### Resumen Descriptivo General
 | Variable | Media | Desv. Estándar | N |
 | :--- | :--- | :--- | :--- |
-| Masa Corporal (g) | [Valor] | [Valor] | [Valor] |
+| Masa Corporal (g) | $[Valor]$ | [$Valor]$ | $[Valor]$ |
 
 ---
 
-## 3. Validación de Supuestos
-Esta etapa justifica la elección de la prueba estadística final.
 
-### A. Prueba de Normalidad (Shapiro-Wilk)
-Se segmentó la base de datos por especie para evaluar la distribución interna de cada grupo.
-* **Grupos [A y B]:** $p > 0.05$ (Se asume normalidad).
-* **Grupo [C]:** $p < 0.05$ (No presenta normalidad).
-
-### B. Homocedasticidad (Prueba de Levene)
-* **Resultado:** $p = [Valor]$.
-* **Interpretación:** [Existe/No existe] igualdad de varianzas entre los grupos.
-
-> **Selección de Prueba:** Dado el [incumplimiento de normalidad / varianza], se procedió a realizar una prueba **[Paramétrica/No Paramétrica]**.
-
----
-
-## 4. Resultados e Interpretación
-A continuación se detallan los hallazgos tras ejecutar el contraste de hipótesis en SPSS.
-
-* **Estadístico de Contraste:** $[t, F \text{ o } H] = [Valor]$
-* **p-valor (Sig.):** $[Valor]$
-* **Decisión:** Al ser el $p < 0.05$, se **rechaza** la Hipótesis Nula ($H_0$).
-
-### Análisis Post-Hoc (Comparaciones Múltiples)
-Las comparaciones múltiples (Tukey/Bonferroni) indican que la diferencia principal radica entre el grupo **[Nombre]** y el grupo **[Nombre]**.
-
----
-
-## 5. Conclusiones y Recomendaciones
-1. **Conclusión:** Se confirma que la especie influye de manera significativa en el peso de los individuos.
-2. **Recomendación:** Se sugiere enfocar esfuerzos de monitoreo en [Especie], dado su comportamiento observado.Analisis_Satisfaccion/README.md
